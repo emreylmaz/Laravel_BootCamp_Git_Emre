@@ -18,8 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin', 'AdminController@index');
+
 //%98 bu tarz yapacağız
 Route::get('/merhaba', 'HomeController@merhaba');
 Route::get('/kayit', 'HomeController@createView');
 Route::post('/kaydet', 'HomeController@create');
-
+Route::get('/kisiler', 'HomeController@indexView');
+Route::get('sil/{id}','HomeController@delete')->where(array('id'  => '[0-9]+'));
+Route::post('/guncelle/{id}', 'HomeController@update')->where(array('id'  => '[0-9]+'));
+Route::get('/guncelle/{id}', 'HomeController@updateView')->where(array('id'  => '[0-9]+'));
