@@ -11,20 +11,25 @@ use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-   // public function merhaba() {
+    public function merhaba() {
         //$users = DB::table('users')->get(); //Veritabanından kullanıcıları çeker
         //$users = User::all(); //Model kullanarak veri çekme
         //dd($users);
         //var_dump($users)
 
-        //$products = Product::with(['user'])->get();
-     //   $products = DB::table('users')
-       //     ->join('products','products.created_by','=','users.id')
-         //   ->select('users.name','products.name') //burdan hem kullanıcı adını hem de ürün adını almayı yapınız
-           // ->get();
+        $products = Product::with(['user'])->get();
+        /*$products = DB::table('users')
+            ->join('products','products.created_by','=','users.id')
+            ->select() //burdan hem kullanıcı adını hem de ürün adını almayı yapınız
+            ->get();
+        */
 
-       // return view('users.index', compact('products')); //->with(['users' => $users]); // merhaba isimli view dosyasına kullanıcılar yollandı
-  //  }
+        return view('merhaba', compact('products')); //->with(['users' => $users]); // merhaba isimli view dosyasına kullanıcılar yollandı
+    }
+    public function index()
+    {
+        return view('home');
+    }
 
     public function createView()
     {

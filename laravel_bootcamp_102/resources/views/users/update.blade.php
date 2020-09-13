@@ -1,7 +1,7 @@
 @extends('layouts.admin-master')
 
 @section('content')
-<form action="/guncelle/{{$user->id}}" method="post">
+<form action="{{route('users.update',$user->id)}}" method="post">
     <div class="form-group">
         <label for="exampleName">Name</label>
         <input type="text" name="name" value="{{$user->name}}" class="form-control" id="exampleName">

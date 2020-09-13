@@ -13,6 +13,7 @@
                         <th class="text-right">email</th>
                         <th class="text-right">Delete</th>
                         <th class="text-right">Update</th>
+                        <td class="text-right"><a href="/indir">İNDİR</a></td>
                     </tr>
                     </thead>
                     <tbody>
@@ -25,6 +26,7 @@
                             </td>
                             <td class="text-right"><button type="button" class="btn btn-primary" onclick="location.href='/guncelle/{{$user->id}}'">Güncelle</button>
                             </td>
+                            <td class="text-right"><a href="/indir">İNDİR</a></td>
                         </tr>
                     @endforeach
                     </tbody>
